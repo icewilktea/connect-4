@@ -51,13 +51,28 @@ public class Main {
     }
 
     //takes the return from input and updates the grid with it
-    static String[][] updateGrid(String[][] grid){}
+    static String[][] updateGrid(String[][] grid, int[] playerRows){
+
+        //goes through all the collums to find the bottom
+        for(int i = 0; i < grid.length; i++){
+            if(grid[i][playerRows[0]]!="_"){
+                grid[i-1][playerRows[0]] = "O";
+            }
+        for(int i = 0; i < grid.length; i++){
+            if(grid[i][playerRows[1]]!="_"){
+                grid[i-1][playerRows[1]] = "X";
+        
+            }    
+        }
+
+        return String[][]grid;
+    }
 
     // looks through grid for 4 in a row
     static String checkForWin(String[][] grid){}
 
     // recursively calls itself till the game is over
-    static void gameLoop(String[][] grid, Scanner userinput){
+    static void gameLoop(String[][] grid, Scanner userInput){
 
 
         // takes the player input
